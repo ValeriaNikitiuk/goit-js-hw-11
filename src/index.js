@@ -11,28 +11,28 @@ loadMoreBtn.style.display = 'none';
 // , onClickSerach);
 // loadMoreBtn .addEventListener('click', onSubSerach);
 
-searchBtn.addEventListener('click', e =>  {
-    e.preventDeafault();
-    onClean();
-    const valueTrim = form.value.trim();
-    if (valueTrim !== '') {
-        onFetch(valueTrim, pageNumber)
-            .then(foundData => {
-                if (foundData.hits.length === 0) {
-                Notify.failure(
-          'Sorry, there are no images matching your search query. Please try again.'
-                    );
-                } else {
-                    onRenderList(foundData.hits);
-                    Notify.success(
-                        "Hooray! We found totalHits images."
-                    );
-      loadMoreBtn.style.display = 'block';
-        gallerySimpleLightbox.refresh();
+searchBtn.addEventListener('click', e => {
+  e.preventDeafault();
+  onClean();
+  const valueTrim = form.value.trim();
+  if (valueTrim !== '') {
+    onFetch(valueTrim, pageNumber)
+      .then(foundData => {
+        if (foundData.hits.length === 0) {
+          Notify.failure(
+            'Sorry, there are no images matching your search query. Please try again.'
+          );
+        } else {
+          onRenderList(foundData.hits);
+          Notify.success(
+            "Hooray! We found totalHits images."
+          );
+          loadMoreBtn.style.display = 'block';
+          gallerySimpleLightbox.refresh();
                  
-                }
-            })
-    }
+        }
+      })
+  }
 });
 
 
