@@ -23,9 +23,9 @@
     "notiflix": "^3.2.5"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.6.0",
+    "@parcel/transformer-sass": "^2.8.1",
     "buffer": "^6.0.3",
-    "parcel": "^2.6.0",
+    "parcel": "^2.8.1",
     "parcel-reporter-clean-dist": "^1.0.4",
     "posthtml-include": "^1.7.4"
   },
