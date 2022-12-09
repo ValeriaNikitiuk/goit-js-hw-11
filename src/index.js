@@ -1,4 +1,4 @@
-import { onFetch } from './js/fetch.js';
+import  onFetch  from './js/fetch.js';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const form = document.querySelector('.search-form');
