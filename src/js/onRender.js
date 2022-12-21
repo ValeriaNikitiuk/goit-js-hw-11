@@ -26,3 +26,4 @@ export function onRenderList(images) {
     galery.innerHTML += markupImg;
     
 }
+

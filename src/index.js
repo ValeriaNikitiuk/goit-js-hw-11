@@ -3,6 +3,7 @@ import SimpleLightbox from 'simplelightbox';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import { onRenderList } from './js/onRender.js';
+import { ProgressBar } from 'react-loader-spinner';
 
 // const form = document.querySelector('.search-form');
 let numberPage = 1;
@@ -78,3 +79,39 @@ function onClean() {
   loadMoreBtn.style.display = 'none' 
 }
 
+let mask = document.querySelector('.loader-inner');
+
+window.addEventListener('load', () =>
+{
+  mask.classList.add('hide');
+  setTimeout(() => {
+mask.remove()
+  }, 400)
+})
+
+
+  // scroll to top//
+
+window.onload = () => {
+  window.onscroll = function (e) {
+    let winY = window.scrollY;
+    if (winY > 300) {
+      ProgressBar();
+      scrollbarAnimation();
+      winY = null;
+    }
+  };
+  const scrollBtn = document.querySelector('.isShowBtn')
+  window.onscroll = () => {
+    if (window.scrollY > 300) {
+      scrollBtn.classList.remove('isHiden');
+    } else {
+      scrollBtn.classList.add('isHiden');
+    }
+  }
+
+  scrollBtn.onclick = () => {
+  window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  }
+
+};
